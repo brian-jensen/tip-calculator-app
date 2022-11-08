@@ -1,5 +1,12 @@
 :root {
   --font-primary: 'Space Mono', monospace;
+  --color-body-bg: hsl(185.3, 41.5%, 83.9%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-label: hsl(185.8, 14.2%, 42.9%);
+  --color-input-txt: hsl(183.2, 100%, 14.7%);
+  --color-text: hsl(172, 67%, 45%);
+  --color-text-accent: hsl(183.8, 14.3%, 56.1%);
+  --color-input-bg: hsl(188.6, 41.2%, 96.7%);
 }
 
 * {
@@ -8,10 +15,13 @@
   padding: 0;
 }
 
-input, select, textarea, button {
+legend, fieldset, input, select, textarea, button {
   border: none;
   box-shadow: none;
   outline: none;
+  background: none;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -30,12 +40,164 @@ ul, ol {
 }
 
 body {
+  background-color: var(--color-body-bg);
   font-family: var(--font-primary);
 }
 
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+header {
+  text-align: center;
+  margin: 50px 0 41px;
 }
+
+header h1 {
+  margin: 0;
+}
+
+main {
+  padding: 32px;
+  background-color: var(--color-white);
+  box-shadow: 0px 32px 43px hsla(185.6, 37.8%, 49.8%, 0.2);
+  border-radius: 25px 25px 0px 0px;
+}
+
+label,
+p {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-label);
+}
+
+#bill,
+#people {
+  width: 100%;
+  height: 48px;
+  font-size: 24px;
+  line-height: 36px;
+  padding-right: 17px;
+  text-align: right;
+  color: var(--color-input-txt);
+  caret-color: var(--color-input-txt);
+  background-color: var(--color-input-bg);
+  background-position: top 16px left 20px;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+
+#bill {
+  background-image: url(../images/icon-dollar.svg);
+}
+
+#people {
+  background-image: url(../images/icon-person.svg);
+}
+
+
+#bill::placeholder,
+#people::placeholder {
+  color: var(--color-input-txt);
+  opacity: 0.35;
+}
+
+.tip-amount {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 16px;
+  margin: 32px 0;
+  max-width: 100%;
+}
+
+.tip-amount p {
+  margin-bottom: 0;
+  flex-basis: 100%;
+}
+
+.tip-amount button,
+.tip-amount input {
+  display: block;
+  height: 48px;
+  font-size: 24px;
+  line-height: 36px;
+  cursor: pointer;
+  color: var(--color-white);
+  background: var(--color-input-txt);
+  border-radius: 5px;
+  flex-basis: calc(50% - 8px);
+  max-width: calc(50% - 8px);
+}
+
+.tip-amount button.active {
+  color: var(--color-input-txt);
+  background: var(--color-text);
+}
+
+.tip-amount input {
+  font-size: 24px;
+  line-height: 36px;
+  padding: 6px 15px;
+  text-align: right;
+  cursor: default;
+  color: var(--color-input-txt);
+  background-color: var(--color-input-bg);
+  caret-color: var(--color-text);
+}
+
+.tip-amount input::placeholder {
+  color: hsl(180, 17.6%, 40%);
+}
+
+.tip-amount-total {
+  margin-top: 32px;
+  padding: 37px 24px 24px;
+  background: var(--color-input-txt);
+  border-radius: 15px;
+}
+
+.tip-amount-total p {
+  color: var(--color-text-accent);
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.tip-amount-total p.amount {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-white);
+}
+
+.tip-usd p,
+.total-usd p {
+  font-size: 32px;
+  line-height: 47px;
+  letter-spacing: -0.666667px;
+  color: var(--color-text);
+}
+
+.tip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tip + .tip {
+  margin-top: 20px;
+}
+
+button[type="reset"] {
+  height: 48px;
+  width: 100%;
+  margin-top: 32px;
+  font-size: 20px;
+  line-height: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: var(--color-input-txt);
+  background-color: var(--color-text);
+  border-radius: 5px;
+}
+
+
+
+
