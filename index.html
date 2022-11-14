@@ -28,19 +28,21 @@
       </header>
       <main>
         <form action="index.html" method="post">
-          <label for="bill">Bill</label>
-          <input type="text" name="bill" id="bill" placeholder="0">
-          <div class="tip-amount">
-            <p>Select Tip &percnt;</p>
-            <button type="button">5&percnt;</button>
-            <button type="button">10&percnt;</button>
-            <button type="button" class="active">15&percnt;</button>
-            <button type="button">25&percnt;</button>
-            <button type="button">50&percnt;</button>
-            <input type="text" class="custom" placeholder="Custom">
+          <div class="form-left">
+            <label for="bill">Bill</label>
+            <input type="text" name="bill" id="bill" placeholder="0">
+            <div class="tip-percent">
+              <p>Select Tip &percnt;</p>
+              <button type="button">5&percnt;</button>
+              <button type="button">10&percnt;</button>
+              <button type="button">15&percnt;</button>
+              <button type="button">25&percnt;</button>
+              <button type="button">50&percnt;</button>
+              <input type="text" class="custom" placeholder="Custom">
+            </div>
+            <label for="people">Number of People</label>
+            <input type="text" name="people" id="people" placeholder="0">
           </div>
-          <label for="people">Number of People</label>
-          <input type="text" name="people" id="people" placeholder="0">
           <div class="tip-amount-total">
             <div class="tip">
               <div class="tip-text">
@@ -48,7 +50,7 @@
                 <p>&sol; person</p>
               </div>
               <div class="tip-usd">
-                <p>&dollar;0</p>
+                <p>&dollar;0.00</p>
               </div>
             </div>
             <div class="tip">
@@ -57,7 +59,7 @@
                 <p>&sol; person</p>
               </div>
               <div class="total-usd">
-                <p>&dollar;0</p>
+                <p>&dollar;0.00</p>
               </div>
             </div>
             <button type="reset">Reset</button>
