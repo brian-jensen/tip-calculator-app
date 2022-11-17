@@ -22,7 +22,7 @@ reset.disabled = true;
 
 const calculateTip = (bill, tip, people) => {
   const tipAmount = bill * (tip / 100) / people;
-  const totalAmount = (bill + tipAmount) / people;
+  const totalAmount = (bill / people) + tipAmount;
   displayTip(tipAmount, totalAmount);
 };
 
